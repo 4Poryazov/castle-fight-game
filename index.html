@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castle Fights</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- <embed name="StartMusic" src="./sounds/Track8.wav" loop="true" hidden="true" autostart="true"> -->
+    <div id="main">
+        <div id="fonts">
+            <h1></h1>
+            <h2></h2>
+        </div>
+        <canvas></canvas>
+    </div>
+    <div id="buttons">
+        <button class="startBtns" id="newGame"></button>
+        <button class="startBtns" id="credits"></button>
+    </div>
+    <div id="newGameCreator">
+        <div id="selectFirstPalyer">
+            <h3>First Player</h3>
+            <h4 id="playerOneName">Select Hero</h4>
+            <ul id="firstPlayerList">
+                <li id="fantasyWarrior">
+                    <img class="figherImg" src="./fighters/fantasyWarriorImg.png" alt="">
+                </li>
+                <li id="redKnight">
+                    <img class="figherImg" src="./fighters/RedKnightImg.png" alt="">
+                </li>
+                <li id="igor">
+                    <img class="figherImg" src="./fighters/MedievalWarriorImg.png" alt="">
+                </li>
+                <li id="jack">
+                    <img class="figherImg" src="./fighters/MedievalWarrior3Img.png" alt="">
+                </li>
+            </ul>
+        </div>
+        <div id="selectArena">
+            <h3>Arena</h3>
+            <h4 id="arenaName">Select Arena</h4>
+            <ul id="arenaList">
+                <li id="castleHall">
+                    <img class="arenaImg" src="./LevelsBackground/Level1Small.png" alt="">
+                </li>
+                <li id="dungeon">
+                    <img class="arenaImg" src="./LevelsBackground/Level2Small.png" alt="">
+                </li>
+                <li id="wreckedGate">
+                    <img class="arenaImg" src="./LevelsBackground/Level3Small.png" alt="">
+                </li>
+            </ul>
+        </div>
+        <div id="selectSecondPalyer">
+            <h3>Second Player</h3>
+            <h4 id="playerTwoName">Select Hero</h4>
+            <ul id="secondPlayerList">
+                <li id="fantasyWarrior">
+                    <img class="figherImg" src="./fighters/fantasyWarriorImgRight.png" alt="">
+                </li>
+                <li id="redKnight">
+                    <img class="figherImg" src="./fighters/RedKnightImgRight.png" alt="">
+                </li>
+                <li id="igor">
+                    <img class="figherImg" src="./fighters/MedievalWarriorImgRight.png" alt="">
+                </li>
+                <li id="jack">
+                    <img class="figherImg" src="./fighters/MedievalWarrior3ImgRight.png" alt="">
+                </li>
+            </ul>
+        </div>
+        <div id="selectGameBtns">
+            <button class="newGameBtns" id="back"></button>
+            <button class="newGameBtns" id="startGame"></button>
+        </div>
+    </div>
+    <script src="classes.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
