@@ -148,3 +148,11 @@ ul {
 #selectArena .selected img{
     box-shadow: 1px 1px 6px 6px rgba(185, 152, 45, 0.7);
 }
+
+textarea {
+    width: 400px;
+    height: 300px;
+    overflow-y: scroll;
+    resize: none;
+    background-color: rgba(0, 0, 0, 0.3);
+}

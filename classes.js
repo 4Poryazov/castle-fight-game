@@ -40,3 +40,29 @@ class Sprite {
         this.animateFrames();
     }
 };
+
+class Fighter extends Sprite {
+    constructor({
+        position,
+        velocity,
+        color = 'blue',
+        imageSrc,
+        scale = 1,
+
+        offset = {x: 0, y: 0},
+        sprites,
+        attackBox = {
+            offset: {},
+            width: undefined,
+            height: undefined
+        }
+    }){
+        super({
+            position,
+            imageSrc,
+            scale,
+            framesMax,
+            offset
+        })
+    }
+}

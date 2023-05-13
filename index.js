@@ -31,6 +31,7 @@ newGameBtn.addEventListener('mouseout', hoverOut);
 newGameBtn.addEventListener('click', newGameStarter);
 creditsBtn.addEventListener('mouseover', hoverCreditsBtn);
 creditsBtn.addEventListener('mouseout', hoverOut);
+creditsBtn.addEventListener('click', showCreditsInfo)
 
 
 canvas.width = 1024;
@@ -78,8 +79,15 @@ function animate() {
     //to make players pop-up
     context.fillStyle = 'rgba(255, 255, 255, 0.05)'
     context.fillRect(0, 0, canvas.width, canvas.height);
-};
+}
+function showCreditsInfo() {
+    document.querySelector('#fonts').style.visibility = 'hidden';
+    document.querySelector('#buttons').style.visibility = 'hidden';
+    var textArea = document.createElement('textarea');
+    document.querySelector('main').appendChild(textArea);
+    
 
+}
 function hoverNewGameBtn(event) {
     background = new Sprite(
         {
