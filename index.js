@@ -9,6 +9,7 @@ const creditsBtn = document.querySelector('#credits');
 
 const newGameCreateCont = document.querySelector('#newGameCreator');
 newGameCreateCont.style.visibility = 'hidden';
+document.querySelector('#creditsArea').style.visibility = 'hidden';
 
 const startGameBtn = document.querySelector('#startGame');
 const backBtn = document.querySelector('#back');
@@ -83,9 +84,17 @@ function animate() {
 function showCreditsInfo() {
     document.querySelector('#fonts').style.visibility = 'hidden';
     document.querySelector('#buttons').style.visibility = 'hidden';
-    var textArea = document.createElement('textarea');
-    document.querySelector('main').appendChild(textArea);
     
+    document.querySelector('#creditsArea').style.visibility = 'visible';
+    
+    
+    document.querySelector('#selectGameBtns').style.visibility = 'visible';
+    document.querySelector('#startGame').style.visibility = 'hidden';
+    backBtn.textContent = 'Back';
+    backBtn.addEventListener('mouseover', hoverSmallBtn);
+    backBtn.addEventListener('mouseout', hoverOutSmallBtn);
+    backBtn.addEventListener('click', backToMain);
+    backBtn.style.marginLeft = '500px';
 
 }
 function hoverNewGameBtn(event) {
