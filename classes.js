@@ -12,6 +12,17 @@ class Sprite {
         this.framesHold = 5;
         this.offset = offset;
     }
+    changeSprite (x, y, imageSrc, framesMax, scale = 1){
+        this.position = {
+            x: x,
+            y: y
+        },
+        this.image = new Image()
+        this.image.src = imageSrc,
+        this.framesMax = framesMax,
+        this.scale = scale
+
+    }
     draw() {
         context.drawImage(
             this.image,

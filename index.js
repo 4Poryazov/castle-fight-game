@@ -84,40 +84,20 @@ function animate() {
 function showCreditsInfo() {
     document.querySelector('#fonts').style.visibility = 'hidden';
     document.querySelector('#buttons').style.visibility = 'hidden';
-    
     document.querySelector('#creditsArea').style.visibility = 'visible';
-    
-    
     document.querySelector('#selectGameBtns').style.visibility = 'visible';
     document.querySelector('#startGame').style.visibility = 'hidden';
+
     backBtn.textContent = 'Back';
     backBtn.addEventListener('mouseover', hoverSmallBtn);
     backBtn.addEventListener('mouseout', hoverOutSmallBtn);
     backBtn.addEventListener('click', backToMain);
     backBtn.style.marginLeft = '500px';
-
 }
 function hoverNewGameBtn(event) {
-    background = new Sprite(
-        {
-            position: {
-                x: 0,
-                y: 0
-            },
-            imageSrc: './LevelsBackground/StartMenuLeftBlue.png',
-        }
-    );
-    torch = new Sprite(
-        {
-            position: {
-                x: 425,
-                y: 225
-            },
-            imageSrc: './LevelsBackground/BigTorchBlue.png',
-            framesMax: 6,
-            scale: 0.32
-        }
-    );
+    background.changeSprite(0, 0, './LevelsBackground/StartMenuLeftBlue.png', 1);
+    torch.changeSprite(425, 225, './LevelsBackground/BigTorchBlue.png', 6, 0.32);
+    
     event.srcElement.style.boxShadow = '-3px -3px 5px 5px rgba(48, 130, 224, 0.7), 3px 3px 5px 5px rgba(74, 48, 224, 0.7)';
     event.srcElement.style.backgroundImage = "url('./LevelsBackground/Button2.png')";
     event.srcElement.style.color = 'white';
@@ -236,86 +216,22 @@ function startGame() {
         arenasList.style.visibility = 'hidden';
         secondPlayerList.style.visibility = 'hidden';
 
-        background = new Sprite(
-            {
-                position: {
-                    x: 0,
-                    y: 0
-                },
-                imageSrc: `./LevelsBackground/${arena.id}.png`,
-            }
-        );
-
+        background.changeSprite(0, 0, `./LevelsBackground/${arena.id}.png`, 1);
+        
         switch (arena.id) {
             case "castleHall":
-                torch = new Sprite(
-                    {
-                        position: {
-                            x: 398,
-                            y: 329
-                        },
-                        imageSrc: './LevelsBackground/BigTorch.png',
-                        framesMax: 6
-                    }
-                );
-                torch2 = new Sprite(
-                    {
-                        position: {
-                            x: 604,
-                            y: 329
-                        },
-                        imageSrc: './LevelsBackground/BigTorch.png',
-                        framesMax: 6
-                    }
-                );
+                torch.changeSprite(398, 329, './LevelsBackground/BigTorch.png', 6);
+                torch2.changeSprite(604, 329, './LevelsBackground/BigTorch.png', 6);
                 break;
             case "dungeon":
-                torch = new Sprite(
-                    {
-                        position: {
-                            x: 433,
-                            y: 245
-                        },
-                        imageSrc: './LevelsBackground/SmallTorch.png',
-                        framesMax: 6
-                    }
-                );
-                torch2 = new Sprite(
-                    {
-                        position: {
-                            x: 558,
-                            y: 245
-                        },
-                        imageSrc: './LevelsBackground/SmallTorch.png',
-                        framesMax: 6
-                    }
-                );
+                torch.changeSprite(433, 245, './LevelsBackground/SmallTorch.png', 6);
+                torch2.changeSprite(558, 245, './LevelsBackground/SmallTorch.png', 6);
                 break;
             case "wreckedGate":
-                torch = new Sprite(
-                    {
-                        position: {
-                            x: 70,
-                            y: 183
-                        },
-                        imageSrc: './LevelsBackground/SmallTorchBlue.png',
-                        framesMax: 6
-                    }
-                );
-                torch2 = new Sprite(
-                    {
-                        position: {
-                            x: 467,
-                            y: 183
-                        },
-                        imageSrc: './LevelsBackground/SmallTorchBlue.png',
-                        framesMax: 6
-                    }
-                );
+                torch.changeSprite(70, 183, './LevelsBackground/SmallTorchBlue.png', 6);
+                torch2.changeSprite(467, 183, './LevelsBackground/SmallTorchBlue.png', 6);
                 break;
         }
-
-
     }
 }
 function returntWarriorName(heroId) {
