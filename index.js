@@ -164,7 +164,97 @@ var playerOne = new Fighter({
     }
 });
 //playerOne.style.visibility = 'hidden';
-
+var playerTwo = new Fighter({
+    position: {
+        x: 0,
+        y: 0
+    },
+    velocity: {
+        x: 0,
+        y: 10
+    },
+    imageSrc: '',
+    scale: 2.3,
+    framesMax: 10,
+    offset: {
+        x: 50,
+        y: 130
+    },
+    sprites: {
+        idleLeft: {
+            imageSrc: '',
+            framesMax: 10
+        },
+        idleRight: {
+            imageSrc: '',
+            framesMax: 10
+        },
+        runLeft: {
+            imageSrc: '',
+            framesMax: 8
+        },
+        runRight: {
+            imageSrc: '',
+            framesMax: 8
+        },
+        jumpLeft: {
+            imageSrc: '',
+            framesMax: 3
+        },
+        jumpRight: {
+            imageSrc: '',
+            framesMax: 3
+        },
+        fallLeft: {
+            imageSrc: '',
+            framesMax: 2
+        },
+        fallRight: {
+            imageSrc: '',
+            framesMax: 2
+        },
+        attack1Left: {
+            imageSrc: '',
+            framesMax: 7
+        },
+        attack1Right: {
+            imageSrc: '',
+            framesMax: 7
+        },
+        attack2Left: {
+            imageSrc: '',
+            framesMax: 7
+        },
+        attack2Right: {
+            imageSrc: '',
+            framesMax: 7
+        },
+        takeHitLeft: {
+            imageSrc: '',
+            framesMax: 3
+        },
+        takeHitRight: {
+            imageSrc: '',
+            framesMax: 3
+        },
+        deathLeft: {
+            imageSrc: '',
+            framesMax: 7
+        },
+        deathRight: {
+            imageSrc: '',
+            framesMax: 7
+        }
+    },
+    attackBox: {
+        offset: {
+            x: 100,
+            y: 50
+        },
+        width: 140,
+        height: 50
+    }
+});
 const keys = {
     a: {
         pressed: false
@@ -334,381 +424,9 @@ function startGame() {
                 torch2.changeSprite(467, 183, './LevelsBackground/SmallTorchBlue.png', 6);
                 break;
         };
-
-        switch (firstHero.id) {
-            case 'fantasyWarrior':
-                playerOne = new Fighter({
-                    position: {
-                        x: 0,
-                        y: 0
-                    },
-                    velocity: {
-                        x: 0,
-                        y: 10
-                    },
-                    imageSrc: './fighters/Fantasy Warrior/Sprites/IdleRight.png',
-                    framesMax: 10,
-                    scale: 2.5,
-                    offset: {
-                        x: 100,
-                        y: 90
-                    },
-                    sprites: {
-                        idleLeft: {
-                            imageSrc: './fighters/Fantasy Warrior/Sprites/IdleLeft.png',
-                            framesMax: 10
-                        },
-                        idleRight: {
-                            imageSrc: './fighters/Fantasy Warrior/Sprites/IdleRight.png',
-                            framesMax: 10
-                        },
-                        runLeft: {
-                            imageSrc: './fighters/Fantasy Warrior/Sprites/RunLeft.png',
-                            framesMax: 8
-                        },
-                        runRight: {
-                            imageSrc: './fighters/Fantasy Warrior/Sprites/RunRight.png',
-                            framesMax: 8
-                        },
-                        jumpLeft: {
-                            imageSrc: './fighters/Fantasy Warrior/Sprites/JumpLeft.png',
-                            framesMax: 3
-                        },
-                        jumpRight: {
-                            imageSrc: './fighters/Fantasy Warrior/Sprites/JumpRight.png',
-                            framesMax: 3
-                        },
-                        fallLeft: {
-                            imageSrc: './fighters/Fantasy Warrior/Sprites/FallLeft.png',
-                            framesMax: 3
-                        },
-                        fallRight: {
-                            imageSrc: './fighters/Fantasy Warrior/Sprites/FallRight.png',
-                            framesMax: 3
-                        },
-                        attack1Left: {
-                            imageSrc: './fighters/Fantasy Warrior/Sprites/Attack1Left.png',
-                            framesMax: 7
-                        },
-                        attack1Right: {
-                            imageSrc: './fighters/Fantasy Warrior/Sprites/Attack1Right.png',
-                            framesMax: 7
-                        },
-                        attack2Left: {
-                            imageSrc: './fighters/Fantasy Warrior/Sprites/Attack2Left.png',
-                            framesMax: 7
-                        },
-                        attack2Right: {
-                            imageSrc: './fighters/Fantasy Warrior/Sprites/Attack2Right.png',
-                            framesMax: 7
-                        },
-                        takeHitLeft: {
-                            imageSrc: './fighters/Fantasy Warrior/Sprites/TakeHitLeft.png',
-                            framesMax: 3
-                        },
-                        takeHitRight: {
-                            imageSrc: './fighters/Fantasy Warrior/Sprites/TakeHitRight.png',
-                            framesMax: 3
-                        },
-                        deathLeft: {
-                            imageSrc: './fighters/Fantasy Warrior/Sprites/DeathLeft.png',
-                            framesMax: 7
-                        },
-                        deathRight: {
-                            imageSrc: './fighters/Fantasy Warrior/Sprites/DeathRight.png',
-                            framesMax: 7
-                        }
-                    },
-                    attackBox: {
-                        offset: {
-                            x: 100,
-                            y: 50
-                        },
-                        width: 140,
-                        height: 50
-                    }
-                });
-                break;
-            case 'redKnight':
-                playerOne = new Fighter({
-                    position: {
-                        x: 0,
-                        y: 0
-                    },
-                    velocity: {
-                        x: 0,
-                        y: 10
-                    },
-                    imageSrc: './fighters/Hero Knight 2/Sprites/IdleRight.png',
-                    framesMax: 11,
-                    scale: 2.5,
-                    offset: {
-                        x: 100,
-                        y: 47
-                    },
-                    sprites: {
-                        idleLeft: {
-                            imageSrc: './fighters/Hero Knight 2/Sprites/IdleLeft.png',
-                            framesMax: 11
-                        },
-                        idleRight: {
-                            imageSrc: './fighters/Hero Knight 2/Sprites/IdleRight.png',
-                            framesMax: 11
-                        },
-                        runLeft: {
-                            imageSrc: './fighters/Hero Knight 2/Sprites/RunLeft.png',
-                            framesMax: 8
-                        },
-                        runRight: {
-                            imageSrc: './fighters/Hero Knight 2/Sprites/RunRight.png',
-                            framesMax: 8
-                        },
-                        jumpLeft: {
-                            imageSrc: './fighters/Hero Knight 2/Sprites/JumpLeft.png',
-                            framesMax: 4
-                        },
-                        jumpRight: {
-                            imageSrc: './fighters/Hero Knight 2/Sprites/JumpRight.png',
-                            framesMax: 4
-                        },
-                        fallLeft: {
-                            imageSrc: './fighters/Hero Knight 2/Sprites/FallLeft.png',
-                            framesMax: 4
-                        },
-                        fallRight: {
-                            imageSrc: './fighters/Hero Knight 2/Sprites/FallRight.png',
-                            framesMax: 4
-                        },
-                        attack1Left: {
-                            imageSrc: './fighters/Hero Knight 2/Sprites/Attack1Left.png',
-                            framesMax: 6
-                        },
-                        attack1Right: {
-                            imageSrc: './fighters/Hero Knight 2/Sprites/Attack1Right.png',
-                            framesMax: 6
-                        },
-                        attack2Left: {
-                            imageSrc: './fighters/Hero Knight 2/Sprites/Attack1Left.png',
-                            framesMax: 6
-                        },
-                        attack2Right: {
-                            imageSrc: './fighters/Hero Knight 2/Sprites/Attack1Right.png',
-                            framesMax: 6
-                        },
-                        takeHitLeft: {
-                            imageSrc: './fighters/Hero Knight 2/Sprites/TakeHitLeft.png',
-                            framesMax: 4
-                        },
-                        takeHitRight: {
-                            imageSrc: './fighters/Hero Knight 2/Sprites/TakeHitRight.png',
-                            framesMax: 4
-                        },
-                        deathLeft: {
-                            imageSrc: './fighters/Hero Knight 2/Sprites/DeathLeft.png',
-                            framesMax: 9
-                        },
-                        deathRight: {
-                            imageSrc: './fighters/Hero Knight 2/Sprites/DeathRight.png',
-                            framesMax: 9
-                        }
-                    },
-                    attackBox: {
-                        offset: {
-                            x: 100,
-                            y: 50
-                        },
-                        width: 140,
-                        height: 50
-                    }
-                });
-                break;
-            case 'igor':
-                playerOne = new Fighter({
-                    position: {
-                        x: 0,
-                        y: 0
-                    },
-                    velocity: {
-                        x: 0,
-                        y: 10
-                    },
-                    imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/IdleRight.png',
-                    framesMax: 8,
-                    scale: 2.5,
-                    offset: {
-                        x: 100,
-                        y: 77
-                    },
-                    sprites: {
-                        idleLeft: {
-                            imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/IdleLeft.png',
-                            framesMax: 8
-                        },
-                        idleRight: {
-                            imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/IdleRight.png',
-                            framesMax: 8
-                        },
-                        runLeft: {
-                            imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/RunLeft.png',
-                            framesMax: 8
-                        },
-                        runRight: {
-                            imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/RunRight.png',
-                            framesMax: 8
-                        },
-                        jumpLeft: {
-                            imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/JumpLeft.png',
-                            framesMax: 2
-                        },
-                        jumpRight: {
-                            imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/JumpRight.png',
-                            framesMax: 2
-                        },
-                        fallLeft: {
-                            imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/FallLeft.png',
-                            framesMax: 2
-                        },
-                        fallRight: {
-                            imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/FallRight.png',
-                            framesMax: 2
-                        },
-                        attack1Left: {
-                            imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/Attack1Left.png',
-                            framesMax: 4
-                        },
-                        attack1Right: {
-                            imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/Attack1Right.png',
-                            framesMax: 4
-                        },
-                        attack2Left: {
-                            imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/Attack1Left.png',
-                            framesMax: 4
-                        },
-                        attack2Right: {
-                            imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/Attack1Right.png',
-                            framesMax: 4
-                        },
-                        takeHitLeft: {
-                            imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/TakeHitLeft.png',
-                            framesMax: 4
-                        },
-                        takeHitRight: {
-                            imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/TakeHitRight.png',
-                            framesMax: 4
-                        },
-                        deathLeft: {
-                            imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/DeathLeft.png',
-                            framesMax: 6
-                        },
-                        deathRight: {
-                            imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/DeathRight.png',
-                            framesMax: 6
-                        }
-                    },
-                    attackBox: {
-                        offset: {
-                            x: 100,
-                            y: 50
-                        },
-                        width: 140,
-                        height: 50
-                    }
-                });
-                break;
-            case 'jack':
-                playerOne = new Fighter({
-                    position: {
-                        x: 0,
-                        y: 0
-                    },
-                    velocity: {
-                        x: 0,
-                        y: 10
-                    },
-                    imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/IdleRight.png',
-                    framesMax: 10,
-                    scale: 2.5,
-                    offset: {
-                        x: 100,
-                        y: 57
-                    },
-                    sprites: {
-                        idleLeft: {
-                            imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/IdleLeft.png',
-                            framesMax: 10
-                        },
-                        idleRight: {
-                            imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/IdleRight.png',
-                            framesMax: 10
-                        },
-                        runLeft: {
-                            imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/RunLeft.png',
-                            framesMax: 6
-                        },
-                        runRight: {
-                            imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/RunRight.png',
-                            framesMax: 6
-                        },
-                        jumpLeft: {
-                            imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/JumpLeft.png',
-                            framesMax: 2
-                        },
-                        jumpRight: {
-                            imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/JumpRight.png',
-                            framesMax: 2
-                        },
-                        fallLeft: {
-                            imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/FallLeft.png',
-                            framesMax: 2
-                        },
-                        fallRight: {
-                            imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/FallRight.png',
-                            framesMax: 2
-                        },
-                        attack1Left: {
-                            imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/Attack1Left.png',
-                            framesMax: 4
-                        },
-                        attack1Right: {
-                            imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/Attack1Right.png',
-                            framesMax: 4
-                        },
-                        attack2Left: {
-                            imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/Attack1Left.png',
-                            framesMax: 5
-                        },
-                        attack2Right: {
-                            imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/Attack1Right.png',
-                            framesMax: 5
-                        },
-                        takeHitLeft: {
-                            imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/TakeHitLeft.png',
-                            framesMax: 3
-                        },
-                        takeHitRight: {
-                            imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/TakeHitRight.png',
-                            framesMax: 3
-                        },
-                        deathLeft: {
-                            imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/DeathLeft.png',
-                            framesMax: 9
-                        },
-                        deathRight: {
-                            imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/DeathRight.png',
-                            framesMax: 9
-                        }
-                    },
-                    attackBox: {
-                        offset: {
-                            x: 100,
-                            y: 50
-                        },
-                        width: 140,
-                        height: 50
-                    }
-                });
-                break;
-        }
+        playerOne = returnWarrior(firstHero.id);
+        playerTwo = returnWarrior(secondHero.id);
+        
 
     } else {
         if (firstHero === null) {
@@ -733,8 +451,10 @@ function animate() {
     context.fillStyle = 'rgba(255, 255, 255, 0.05)'
     context.fillRect(0, 0, canvas.width, canvas.height);
     playerOne.update();
+    playerTwo.update();
 
     playerOne.velocity.x = 0;
+    playerTwo.velocity.x = 0;
 
     //player One Movement
     if (keys.a.pressed && playerOne.lastKey === 'a') {
@@ -748,27 +468,406 @@ function animate() {
             playerOne.switchSprite('runRight');
         }
     } else {
-        if(playerOne.lastKey === 'a'){
+        if (playerOne.lastKey === 'a') {
             playerOne.switchSprite('idleLeft');
-        }else if(playerOne.lastKey === 'd'){
+        } else if (playerOne.lastKey === 'd') {
             playerOne.switchSprite('idleRight');
         }
     };
     // jumping
     if (playerOne.velocity.y < 0) {
-        if(playerOne.lastKey === 'a'){
+        if (playerOne.lastKey === 'a') {
             playerOne.switchSprite('jumpLeft');
-        }else if(playerOne.lastKey === 'd'){
+        } else if (playerOne.lastKey === 'd') {
             playerOne.switchSprite('jumpRight');
         }
     } else if (playerOne.velocity.y > 0) {
-        if(playerOne.lastKey === 'a'){
+        if (playerOne.lastKey === 'a') {
             playerOne.switchSprite('fallLeft');
-        }else if(playerOne.lastKey === 'd'){
+        } else if (playerOne.lastKey === 'd') {
             playerOne.switchSprite('fallRight');
         }
     };
 
+}
+
+function returnWarrior(heroId){
+    var hero = '';
+    switch (heroId) {
+        case "fantasyWarrior":
+            hero = new Fighter({
+                position: {
+                    x: 0,
+                    y: 0
+                },
+                velocity: {
+                    x: 0,
+                    y: 10
+                },
+                imageSrc: './fighters/Fantasy Warrior/Sprites/IdleRight.png',
+                framesMax: 10,
+                scale: 2.5,
+                offset: {
+                    x: 100,
+                    y: 90
+                },
+                sprites: {
+                    idleLeft: {
+                        imageSrc: './fighters/Fantasy Warrior/Sprites/IdleLeft.png',
+                        framesMax: 10
+                    },
+                    idleRight: {
+                        imageSrc: './fighters/Fantasy Warrior/Sprites/IdleRight.png',
+                        framesMax: 10
+                    },
+                    runLeft: {
+                        imageSrc: './fighters/Fantasy Warrior/Sprites/RunLeft.png',
+                        framesMax: 8
+                    },
+                    runRight: {
+                        imageSrc: './fighters/Fantasy Warrior/Sprites/RunRight.png',
+                        framesMax: 8
+                    },
+                    jumpLeft: {
+                        imageSrc: './fighters/Fantasy Warrior/Sprites/JumpLeft.png',
+                        framesMax: 3
+                    },
+                    jumpRight: {
+                        imageSrc: './fighters/Fantasy Warrior/Sprites/JumpRight.png',
+                        framesMax: 3
+                    },
+                    fallLeft: {
+                        imageSrc: './fighters/Fantasy Warrior/Sprites/FallLeft.png',
+                        framesMax: 3
+                    },
+                    fallRight: {
+                        imageSrc: './fighters/Fantasy Warrior/Sprites/FallRight.png',
+                        framesMax: 3
+                    },
+                    attack1Left: {
+                        imageSrc: './fighters/Fantasy Warrior/Sprites/Attack1Left.png',
+                        framesMax: 7
+                    },
+                    attack1Right: {
+                        imageSrc: './fighters/Fantasy Warrior/Sprites/Attack1Right.png',
+                        framesMax: 7
+                    },
+                    attack2Left: {
+                        imageSrc: './fighters/Fantasy Warrior/Sprites/Attack2Left.png',
+                        framesMax: 7
+                    },
+                    attack2Right: {
+                        imageSrc: './fighters/Fantasy Warrior/Sprites/Attack2Right.png',
+                        framesMax: 7
+                    },
+                    takeHitLeft: {
+                        imageSrc: './fighters/Fantasy Warrior/Sprites/TakeHitLeft.png',
+                        framesMax: 3
+                    },
+                    takeHitRight: {
+                        imageSrc: './fighters/Fantasy Warrior/Sprites/TakeHitRight.png',
+                        framesMax: 3
+                    },
+                    deathLeft: {
+                        imageSrc: './fighters/Fantasy Warrior/Sprites/DeathLeft.png',
+                        framesMax: 7
+                    },
+                    deathRight: {
+                        imageSrc: './fighters/Fantasy Warrior/Sprites/DeathRight.png',
+                        framesMax: 7
+                    }
+                },
+                attackBox: {
+                    offset: {
+                        x: 100,
+                        y: 50
+                    },
+                    width: 140,
+                    height: 50
+                }
+            });
+            break;
+        case "redKnight":
+            hero = new Fighter({
+                position: {
+                    x: 0,
+                    y: 0
+                },
+                velocity: {
+                    x: 0,
+                    y: 10
+                },
+                imageSrc: './fighters/Hero Knight 2/Sprites/IdleRight.png',
+                framesMax: 11,
+                scale: 2.5,
+                offset: {
+                    x: 100,
+                    y: 47
+                },
+                sprites: {
+                    idleLeft: {
+                        imageSrc: './fighters/Hero Knight 2/Sprites/IdleLeft.png',
+                        framesMax: 11
+                    },
+                    idleRight: {
+                        imageSrc: './fighters/Hero Knight 2/Sprites/IdleRight.png',
+                        framesMax: 11
+                    },
+                    runLeft: {
+                        imageSrc: './fighters/Hero Knight 2/Sprites/RunLeft.png',
+                        framesMax: 8
+                    },
+                    runRight: {
+                        imageSrc: './fighters/Hero Knight 2/Sprites/RunRight.png',
+                        framesMax: 8
+                    },
+                    jumpLeft: {
+                        imageSrc: './fighters/Hero Knight 2/Sprites/JumpLeft.png',
+                        framesMax: 4
+                    },
+                    jumpRight: {
+                        imageSrc: './fighters/Hero Knight 2/Sprites/JumpRight.png',
+                        framesMax: 4
+                    },
+                    fallLeft: {
+                        imageSrc: './fighters/Hero Knight 2/Sprites/FallLeft.png',
+                        framesMax: 4
+                    },
+                    fallRight: {
+                        imageSrc: './fighters/Hero Knight 2/Sprites/FallRight.png',
+                        framesMax: 4
+                    },
+                    attack1Left: {
+                        imageSrc: './fighters/Hero Knight 2/Sprites/Attack1Left.png',
+                        framesMax: 6
+                    },
+                    attack1Right: {
+                        imageSrc: './fighters/Hero Knight 2/Sprites/Attack1Right.png',
+                        framesMax: 6
+                    },
+                    attack2Left: {
+                        imageSrc: './fighters/Hero Knight 2/Sprites/Attack1Left.png',
+                        framesMax: 6
+                    },
+                    attack2Right: {
+                        imageSrc: './fighters/Hero Knight 2/Sprites/Attack1Right.png',
+                        framesMax: 6
+                    },
+                    takeHitLeft: {
+                        imageSrc: './fighters/Hero Knight 2/Sprites/TakeHitLeft.png',
+                        framesMax: 4
+                    },
+                    takeHitRight: {
+                        imageSrc: './fighters/Hero Knight 2/Sprites/TakeHitRight.png',
+                        framesMax: 4
+                    },
+                    deathLeft: {
+                        imageSrc: './fighters/Hero Knight 2/Sprites/DeathLeft.png',
+                        framesMax: 9
+                    },
+                    deathRight: {
+                        imageSrc: './fighters/Hero Knight 2/Sprites/DeathRight.png',
+                        framesMax: 9
+                    }
+                },
+                attackBox: {
+                    offset: {
+                        x: 100,
+                        y: 50
+                    },
+                    width: 140,
+                    height: 50
+                }
+            });
+            break;
+        case "igor":
+           hero = new Fighter({
+            position: {
+                x: 0,
+                y: 0
+            },
+            velocity: {
+                x: 0,
+                y: 10
+            },
+            imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/IdleRight.png',
+            framesMax: 8,
+            scale: 2.5,
+            offset: {
+                x: 100,
+                y: 77
+            },
+            sprites: {
+                idleLeft: {
+                    imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/IdleLeft.png',
+                    framesMax: 8
+                },
+                idleRight: {
+                    imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/IdleRight.png',
+                    framesMax: 8
+                },
+                runLeft: {
+                    imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/RunLeft.png',
+                    framesMax: 8
+                },
+                runRight: {
+                    imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/RunRight.png',
+                    framesMax: 8
+                },
+                jumpLeft: {
+                    imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/JumpLeft.png',
+                    framesMax: 2
+                },
+                jumpRight: {
+                    imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/JumpRight.png',
+                    framesMax: 2
+                },
+                fallLeft: {
+                    imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/FallLeft.png',
+                    framesMax: 2
+                },
+                fallRight: {
+                    imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/FallRight.png',
+                    framesMax: 2
+                },
+                attack1Left: {
+                    imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/Attack1Left.png',
+                    framesMax: 4
+                },
+                attack1Right: {
+                    imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/Attack1Right.png',
+                    framesMax: 4
+                },
+                attack2Left: {
+                    imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/Attack2Left.png',
+                    framesMax: 4
+                },
+                attack2Right: {
+                    imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/Attack2Right.png',
+                    framesMax: 4
+                },
+                takeHitLeft: {
+                    imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/TakeHitLeft.png',
+                    framesMax: 4
+                },
+                takeHitRight: {
+                    imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/TakeHitRight.png',
+                    framesMax: 4
+                },
+                deathLeft: {
+                    imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/DeathLeft.png',
+                    framesMax: 6
+                },
+                deathRight: {
+                    imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/DeathRight.png',
+                    framesMax: 6
+                }
+            },
+            attackBox: {
+                offset: {
+                    x: 100,
+                    y: 50
+                },
+                width: 140,
+                height: 50
+            }
+        });
+            break;
+        case "jack":
+           hero = new Fighter({
+            position: {
+                x: 0,
+                y: 0
+            },
+            velocity: {
+                x: 0,
+                y: 10
+            },
+            imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/IdleRight.png',
+            framesMax: 10,
+            scale: 2.5,
+            offset: {
+                x: 100,
+                y: 57
+            },
+            sprites: {
+                idleLeft: {
+                    imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/IdleLeft.png',
+                    framesMax: 10
+                },
+                idleRight: {
+                    imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/IdleRight.png',
+                    framesMax: 10
+                },
+                runLeft: {
+                    imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/RunLeft.png',
+                    framesMax: 6
+                },
+                runRight: {
+                    imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/RunRight.png',
+                    framesMax: 6
+                },
+                jumpLeft: {
+                    imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/JumpLeft.png',
+                    framesMax: 2
+                },
+                jumpRight: {
+                    imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/JumpRight.png',
+                    framesMax: 2
+                },
+                fallLeft: {
+                    imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/FallLeft.png',
+                    framesMax: 2
+                },
+                fallRight: {
+                    imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/FallRight.png',
+                    framesMax: 2
+                },
+                attack1Left: {
+                    imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/Attack1Left.png',
+                    framesMax: 4
+                },
+                attack1Right: {
+                    imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/Attack1Right.png',
+                    framesMax: 4
+                },
+                attack2Left: {
+                    imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/Attack2Left.png',
+                    framesMax: 5
+                },
+                attack2Right: {
+                    imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/Attack2Right.png',
+                    framesMax: 5
+                },
+                takeHitLeft: {
+                    imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/TakeHitLeft.png',
+                    framesMax: 3
+                },
+                takeHitRight: {
+                    imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/TakeHitRight.png',
+                    framesMax: 3
+                },
+                deathLeft: {
+                    imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/DeathLeft.png',
+                    framesMax: 9
+                },
+                deathRight: {
+                    imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/DeathRight.png',
+                    framesMax: 9
+                }
+            },
+            attackBox: {
+                offset: {
+                    x: 100,
+                    y: 50
+                },
+                width: 140,
+                height: 50
+            }
+        });
+            break;
+    }
+    return hero; 
 }
 
 function returntWarriorName(heroId) {
@@ -817,6 +916,7 @@ function backToMain() {
 }
 animate();
 window.addEventListener('keydown', (event) => {
+    //firstPlayerKeys
     if (!playerOne.dead && !isGameOver) {
         switch (event.key) {
             case 'd':
@@ -833,14 +933,64 @@ window.addEventListener('keydown', (event) => {
                 }
                 break;
             case 'r':
-                playerOne.attack();
+                switch (playerOne.lastKey) {
+                    case "a":
+                        playerOne.attackLeft();
+                        break;
+                    case "d":
+                        playerOne.attackRight();
+                        break;
+                }
                 break;
             case 't':
-                playerOne.secondAttack();
+                switch (playerOne.lastKey) {
+                    case "a":
+                        playerOne.secondAttackLeft();
+                        break;
+                    case "d":
+                        playerOne.secondAttackRight();
+                        break;
+                }
                 break;
         }
     }
-    // enemyKeys
+    // secondPlayerKeys
+    if (!playerTwo.dead && !isGameOver) {
+        switch (event.key) {
+            case 'ArrowRight':
+                keys.ArrowRight.pressed = true;
+                playerTwo.lastKey = 'ArrowRight';
+                break;
+            case 'ArrowLeft':
+                keys.ArrowLeft.pressed = true;
+                playerTwo.lastKey = 'ArrowLeft';
+                break;
+            case 'ArrowUp':
+                if (playerTwo.position.y === 330) {
+                    playerTwo.velocity.y = -20;
+                }
+                break;
+            case 'l':
+                switch (playerOne.lastKey) {
+                    case "ArrowLeft":
+                        playerTwo.attackLeft();
+                        break;
+                    case "ArrowRight":
+                        playerTwo.attackRight();
+                        break;
+                }
+                break;
+            case ';':
+                switch (playerOne.lastKey) {
+                    case "ArrowLeft":
+                        playerTwo.attackLeft();
+                        break;
+                    case "ArrowRight":
+                        playerTwo.attackRight();
+                        break;
+                }                break;
+        }
+    }
 })
 window.addEventListener('keyup', (event) => {
     switch (event.key) {
@@ -850,16 +1000,11 @@ window.addEventListener('keyup', (event) => {
         case 'a':
             keys.a.pressed = false;
             break;
-        case 'w':
-            keys.w.pressed = false;
-            break;
         //enemyKeys
         case 'ArrowRight':
             keys.ArrowRight.pressed = false;
             break;
         case 'ArrowLeft':
             keys.ArrowLeft.pressed = false;
-
     }
-
 })
