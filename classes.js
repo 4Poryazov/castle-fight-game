@@ -134,17 +134,14 @@ class Fighter extends Sprite {
         this.isAttacking = true;
     }
 
-    secondAttack() {
-        switch (lastKey) {
-            case 'a':
-                this.switchSprite('attack2Left');
-                this.isAttacking = true;
-                break;
-            case 'd':
-                this.switchSprite('attack2Right');
-                this.isAttacking = true;
-                break;
-        }
+    secondAttackLeft() {
+        this.switchSprite('attack2Left');
+        this.isAttacking = true;
+    }
+
+    secondAttackRight() {
+        this.switchSprite('attack2Right');
+        this.isAttacking = true;
     }
 
     takeHit() {
