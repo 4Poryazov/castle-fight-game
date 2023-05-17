@@ -144,32 +144,24 @@ class Fighter extends Sprite {
         this.isAttacking = true;
     }
 
-    takeHit() {
+    takeHitLeft() {
         this.health -= 10;
         if (this.health <= 0) {
-            switch (lastKey) {
-                case 'a':
-                    this.switchSprite('deathLeft');
-                    this.isAttacking = true;
-                    break;
-                case 'd':
-                    this.switchSprite('deathRight');
-                    this.isAttacking = true;
-                    break;
-            }
+            this.switchSprite('deathLeft');
         } else {
-            switch (lastKey) {
-                case 'a':
-                    this.switchSprite('takeHitLeft');
-                    this.isAttacking = true;
-                    break;
-                case 'd':
-                    this.switchSprite('takeHitRight');
-                    this.isAttacking = true;
-                    break;
-            }
+            this.switchSprite('takeHitLeft');
         };
     }
+
+    takeHitRight() {
+        this.health -= 10;
+        if (this.health <= 0) {
+            this.switchSprite('deathRight');
+        } else {
+            this.switchSprite('takeHitRight');
+        };
+    }
+
     switchSprite(sprite) {
         if (this.image === this.sprites.deathLeft.image) {
             if (this.framesCurrent === this.sprites.deathLeft.framesMax - 1) {
