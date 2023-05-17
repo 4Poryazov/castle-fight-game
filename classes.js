@@ -146,16 +146,6 @@ class Fighter extends Sprite {
 
     takeHit() {
         this.health -= 10;
-        switch (lastKey) {
-            case 'a':
-                this.switchSprite('attack1Left');
-                this.isAttacking = true;
-                break;
-            case 'd':
-                this.switchSprite('attack1Right');
-                this.isAttacking = true;
-                break;
-        }
         if (this.health <= 0) {
             switch (lastKey) {
                 case 'a':
