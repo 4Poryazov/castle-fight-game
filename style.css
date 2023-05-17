@@ -227,6 +227,78 @@ ul {
     text-decoration: none;
 }
 
+#healthBars {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+}
+#playerOneHealth {
+    position: relative;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+#timer {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: dimgrey;
+    font-family: Alagard;
+    font-size: 20px;
+    width: 56px;
+    height: 56px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-image: url('./LevelsBackground/timer_bar.png');
+}
+#playerTwoHealth {
+    position: relative;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+#backgroundBar {
+    position: absolute;
+    width: 100%;
+    height: 27px;
+    background-image: url('./LevelsBackground/bar_background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80% 25px;
+}
+#healthBarPO {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background-image: url("./LevelsBackground/health_bar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80% 25px;
+}
+#healthBarPT {
+    position: absolute;
+    width: 100%;
+    height: 27px;
+    background-image: url("./LevelsBackground/health_bar_2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80% 25px;
+}
+#barOutline {
+    position: absolute;
+    top: -3px;
+    width: 100%;
+    height: 30px;
+    background-image: url("./LevelsBackground/bar.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 400px 30px;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
