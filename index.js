@@ -10,6 +10,7 @@ const creditsBtn = document.querySelector('#credits');
 const newGameCreateCont = document.querySelector('#newGameCreator');
 newGameCreateCont.style.visibility = 'hidden';
 document.querySelector('#creditsArea').style.visibility = 'hidden';
+document.querySelector('#healthBars').style.visibility = 'hidden';
 
 const startGameBtn = document.querySelector('#startGame');
 const backBtn = document.querySelector('#back');
@@ -394,6 +395,7 @@ function startGame() {
     var firstHero = document.querySelector('#firstPlayerList li.selected');
     var secondHero = document.querySelector('#secondPlayerList li.selected');
     var arena = document.querySelector('#selectArena li.selected');
+    decreaseTimer();
 
     if (firstHero !== null && secondHero !== null && arena !== null) {
 
@@ -403,6 +405,7 @@ function startGame() {
         firstPlayerList.style.visibility = 'hidden';
         arenasList.style.visibility = 'hidden';
         secondPlayerList.style.visibility = 'hidden';
+        document.querySelector('#healthBars').style.visibility = 'visible';
 
         background.changeSprite(0, 0, `./LevelsBackground/${arena.id}.png`, 1);
 
@@ -534,9 +537,9 @@ function animate() {
             playerTwo.takeHitRight();
         }
         playerOne.isAttacking = false;
-        /*gsap.to('#enemyHealth', {
-            width: enemy.health + '%'
-        });*/
+        gsap.to('#healthBarPO', {
+            width: playerTwo.health + '%'
+        });
     };
 
     // playerOne gets Hit
@@ -552,9 +555,9 @@ function animate() {
             playerOne.takeHitRight();
         }
         playerTwo.isAttacking = false;
-        /*gsap.to('#playerHealth', {
-            width: player.health + '%'
-        });*/
+        gsap.to('#healthBarPT', {
+            width: playerOne.health + '%'
+        });
 
     };
     //if playerOne misses

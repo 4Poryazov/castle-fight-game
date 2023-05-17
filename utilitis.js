@@ -25,8 +25,12 @@ function decreaseTimer() {
         document.querySelector('#timer').innerHTML = timer;
     }
 
+    if (timer <= 10){
+        document.querySelector('#timer').style.color = 'rgb(179, 43, 43)';
+    }
+
     if (timer === 0) {
-        determineWinner({ player, enemy, timerId });
+        determineWinner({ playerOne, playerTwo, timerId });
         isGameOver = true;
     }
 }
