@@ -262,9 +262,6 @@ const keys = {
     d: {
         pressed: false
     },
-    w: {
-        pressed: false
-    },
     ArrowRight: {
         pressed: false
     },
@@ -523,6 +520,48 @@ function animate() {
         }
     };
 
+     //detect for collision and PlayerTwo take Hit
+     if (rectangularCollision({
+        rectangle1: playerOne,
+        rectangle2: playerTwo
+    }) &&
+    playerOne.isAttacking && playerOne.framesCurrent === 4
+    ) {
+        playerTwo.takeHit();
+        playerOne.isAttacking = false;
+        /*gsap.to('#enemyHealth', {
+            width: enemy.health + '%'
+        });*/
+    };
+
+    // playerOne gets Hit
+    if (rectangularCollision({
+        rectangle1: playerTwo,
+        rectangle2: playerOne
+    }) &&
+    playerTwo.isAttacking && playerTwo.framesCurrent === 2
+    ) {
+        playerOne.takeHit();
+        playerTwo.isAttacking = false;
+        /*gsap.to('#playerHealth', {
+            width: player.health + '%'
+        });*/
+
+    };
+    //if playerOne misses
+    if (playerOne.isAttacking && playerOne.framesCurrent === 4) {
+        player.isAttacking = false;
+    }
+    //if playerTwo misses
+    if (playerTwo.isAttacking && playerTwo.framesCurrent === 2) {
+        playerTwo.isAttacking = false;
+    }
+      // end game based on Health 
+      if (playerTwo.health <= 0 || playerOne.health <= 0) {
+        determineWinner({ playerOne, playerTwo, timerId });
+        isGameOver = true;
+    }
+
 }
 
 function returnPlayerOne(heroId) {
@@ -613,10 +652,10 @@ function returnPlayerOne(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 200,
+                        x: 260,
                         y: 50
                     },
-                    width: 140,
+                    width: 110,
                     height: 50
                 }
             });
@@ -706,10 +745,10 @@ function returnPlayerOne(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 200,
+                        x: 260,
                         y: 50
                     },
-                    width: 140,
+                    width: 110,
                     height: 50
                 }
             });
@@ -799,10 +838,10 @@ function returnPlayerOne(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 200,
+                        x: 260,
                         y: 50
                     },
-                    width: 140,
+                    width: 110,
                     height: 50
                 }
             });
@@ -892,10 +931,10 @@ function returnPlayerOne(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 200,
+                        x: 260,
                         y: 50
                     },
-                    width: 140,
+                    width: 110,
                     height: 50
                 }
             });
@@ -991,10 +1030,10 @@ function returnPlayerTwo(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 200,
+                        x: 260,
                         y: 50
                     },
-                    width: 140,
+                    width: 110,
                     height: 50
                 }
             });
@@ -1084,10 +1123,10 @@ function returnPlayerTwo(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 200,
+                        x: 260,
                         y: 50
                     },
-                    width: 140,
+                    width: 110,
                     height: 50
                 }
             });
@@ -1177,10 +1216,10 @@ function returnPlayerTwo(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 200,
+                        x: 260,
                         y: 50
                     },
-                    width: 140,
+                    width: 110,
                     height: 50
                 }
             });
@@ -1270,10 +1309,10 @@ function returnPlayerTwo(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 200,
+                        x: 260,
                         y: 50
                     },
-                    width: 140,
+                    width: 110,
                     height: 50
                 }
             });
@@ -1325,7 +1364,9 @@ function hoverOutSmallBtn(event) {
 function backToMain() {
     location.reload();
 }
-animate();
+if(!isGameOver){
+    animate();
+}
 window.addEventListener('keydown', (event) => {
     //firstPlayerKeys
     if (!playerOne.dead && !isGameOver) {
@@ -1333,10 +1374,12 @@ window.addEventListener('keydown', (event) => {
             case 'd':
                 keys.d.pressed = true;
                 playerOne.lastKey = 'd';
+                playerOne.attackBox.offset.x = 260;
                 break;
             case 'a':
                 keys.a.pressed = true;
                 playerOne.lastKey = 'a';
+                playerOne.attackBox.offset.x = 80;
                 break;
             case 'w':
                 if (playerOne.position.y === 330) {
@@ -1371,10 +1414,12 @@ window.addEventListener('keydown', (event) => {
             case 'ArrowRight':
                 keys.ArrowRight.pressed = true;
                 playerTwo.lastKey = 'ArrowRight';
+                playerTwo.attackBox.offset.x = 260;
                 break;
             case 'ArrowLeft':
                 keys.ArrowLeft.pressed = true;
                 playerTwo.lastKey = 'ArrowLeft';
+                playerTwo.attackBox.offset.x = 80;
                 break;
             case 'ArrowUp':
                 if (playerTwo.position.y === 330) {
@@ -1382,7 +1427,7 @@ window.addEventListener('keydown', (event) => {
                 }
                 break;
             case 'l':
-                switch (playerOne.lastKey) {
+                switch (playerTwo.lastKey) {
                     case "ArrowLeft":
                         playerTwo.attackLeft();
                         break;
@@ -1392,17 +1437,17 @@ window.addEventListener('keydown', (event) => {
                 }
                 break;
             case ';':
-                switch (playerOne.lastKey) {
+                switch (playerTwo.lastKey) {
                     case "ArrowLeft":
-                        playerTwo.attackLeft();
+                        playerTwo.secondAttackLeft();
                         break;
                     case "ArrowRight":
-                        playerTwo.attackRight();
+                        playerTwo.secondAttackRight();
                         break;
                 }                break;
         }
     }
-})
+;})
 window.addEventListener('keyup', (event) => {
     switch (event.key) {
         //player One Keys
