@@ -458,12 +458,12 @@ function animate() {
 
     //player One Movement
     if (keys.a.pressed && playerOne.lastKey === 'a') {
-        if (playerOne.position.x > -20) {
+        if (playerOne.position.x > -160) {
             playerOne.velocity.x = -5;
             playerOne.switchSprite('runLeft');
         }
     } else if (keys.d.pressed && playerOne.lastKey === 'd') {
-        if (playerOne.position.x < 880) {
+        if (playerOne.position.x < 750) {
             playerOne.velocity.x = 5;
             playerOne.switchSprite('runRight');
         }
@@ -491,12 +491,12 @@ function animate() {
 
     //player Two Movement
     if (keys.ArrowLeft.pressed && playerTwo.lastKey === 'ArrowLeft') {
-        if (playerTwo.position.x > -50) {
+        if (playerTwo.position.x > -160) {
             playerTwo.velocity.x = -5;
             playerTwo.switchSprite('runLeft');
         }
     } else if (keys.ArrowRight.pressed && playerTwo.lastKey === 'ArrowRight') {
-        if (playerTwo.position.x < 930) {
+        if (playerTwo.position.x < 750) {
             playerTwo.velocity.x = 5;
             playerTwo.switchSprite('runRight');
         }
@@ -531,7 +531,7 @@ function returnPlayerOne(heroId) {
         case "fantasyWarrior":
             hero = new Fighter({
                 position: {
-                    x: 0,
+                    x: -180,
                     y: 0
                 },
                 velocity: {
@@ -540,10 +540,10 @@ function returnPlayerOne(heroId) {
                 },
                 imageSrc: './fighters/Fantasy Warrior/Sprites/IdleRight.png',
                 framesMax: 10,
-                scale: 2.5,
+                scale: 3,
                 offset: {
-                    x: 100,
-                    y: 90
+                    x: 0,
+                    y: 140
                 },
                 sprites: {
                     idleLeft: {
@@ -613,7 +613,7 @@ function returnPlayerOne(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 100,
+                        x: 200,
                         y: 50
                     },
                     width: 140,
@@ -624,7 +624,7 @@ function returnPlayerOne(heroId) {
         case "redKnight":
             hero = new Fighter({
                 position: {
-                    x: 0,
+                    x: -150,
                     y: 0
                 },
                 velocity: {
@@ -633,10 +633,10 @@ function returnPlayerOne(heroId) {
                 },
                 imageSrc: './fighters/Hero Knight 2/Sprites/IdleRight.png',
                 framesMax: 11,
-                scale: 2.5,
+                scale: 3,
                 offset: {
-                    x: 100,
-                    y: 47
+                    x: 0,
+                    y: 87
                 },
                 sprites: {
                     idleLeft: {
@@ -706,7 +706,7 @@ function returnPlayerOne(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 100,
+                        x: 200,
                         y: 50
                     },
                     width: 140,
@@ -717,7 +717,7 @@ function returnPlayerOne(heroId) {
         case "igor":
             hero = new Fighter({
                 position: {
-                    x: 0,
+                    x: -150,
                     y: 0
                 },
                 velocity: {
@@ -726,10 +726,10 @@ function returnPlayerOne(heroId) {
                 },
                 imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/IdleRight.png',
                 framesMax: 8,
-                scale: 2.5,
+                scale: 3,
                 offset: {
-                    x: 100,
-                    y: 77
+                    x: 0,
+                    y: 125
                 },
                 sprites: {
                     idleLeft: {
@@ -799,7 +799,7 @@ function returnPlayerOne(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 100,
+                        x: 200,
                         y: 50
                     },
                     width: 140,
@@ -810,7 +810,7 @@ function returnPlayerOne(heroId) {
         case "jack":
             hero = new Fighter({
                 position: {
-                    x: 0,
+                    x: -150,
                     y: 0
                 },
                 velocity: {
@@ -819,10 +819,10 @@ function returnPlayerOne(heroId) {
                 },
                 imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/IdleRight.png',
                 framesMax: 10,
-                scale: 2.5,
+                scale: 3,
                 offset: {
-                    x: 100,
-                    y: 57
+                    x: 0,
+                    y: 95
                 },
                 sprites: {
                     idleLeft: {
@@ -892,7 +892,7 @@ function returnPlayerOne(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 100,
+                        x: 200,
                         y: 50
                     },
                     width: 140,
@@ -909,7 +909,7 @@ function returnPlayerTwo(heroId) {
         case "fantasyWarrior":
             hero = new Fighter({
                 position: {
-                    x: 0,
+                    x: 710,
                     y: 0
                 },
                 velocity: {
@@ -918,10 +918,10 @@ function returnPlayerTwo(heroId) {
                 },
                 imageSrc: './fighters/Fantasy Warrior/Sprites/IdleLeft.png',
                 framesMax: 10,
-                scale: 2.5,
+                scale: 3,
                 offset: {
-                    x: 600,
-                    y: 90
+                    x: 0,
+                    y: 140
                 },
                 sprites: {
                     idleLeft: {
@@ -991,7 +991,7 @@ function returnPlayerTwo(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 100,
+                        x: 200,
                         y: 50
                     },
                     width: 140,
@@ -1002,19 +1002,19 @@ function returnPlayerTwo(heroId) {
         case "redKnight":
             hero = new Fighter({
                 position: {
-                    x: 0,
+                    x: 730,
                     y: 0
                 },
                 velocity: {
                     x: 0,
                     y: 10
                 },
-                imageSrc: './fighters/Hero Knight 2/Sprites/IdleRight.png',
+                imageSrc: './fighters/Hero Knight 2/Sprites/IdleLeft.png',
                 framesMax: 11,
-                scale: 2.5,
+                scale: 3,
                 offset: {
-                    x: 100,
-                    y: 47
+                    x: 0,
+                    y: 87
                 },
                 sprites: {
                     idleLeft: {
@@ -1084,7 +1084,7 @@ function returnPlayerTwo(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 100,
+                        x: 200,
                         y: 50
                     },
                     width: 140,
@@ -1095,19 +1095,19 @@ function returnPlayerTwo(heroId) {
         case "igor":
             hero = new Fighter({
                 position: {
-                    x: 0,
+                    x: 730,
                     y: 0
                 },
                 velocity: {
                     x: 0,
                     y: 10
                 },
-                imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/IdleRight.png',
+                imageSrc: './fighters/Medieval Warrior Pack 2/Sprites/IdleLeft.png',
                 framesMax: 8,
-                scale: 2.5,
+                scale: 3,
                 offset: {
-                    x: 100,
-                    y: 77
+                    x: 0,
+                    y: 125
                 },
                 sprites: {
                     idleLeft: {
@@ -1177,7 +1177,7 @@ function returnPlayerTwo(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 100,
+                        x: 200,
                         y: 50
                     },
                     width: 140,
@@ -1188,19 +1188,19 @@ function returnPlayerTwo(heroId) {
         case "jack":
             hero = new Fighter({
                 position: {
-                    x: 0,
+                    x: 740,
                     y: 0
                 },
                 velocity: {
                     x: 0,
                     y: 10
                 },
-                imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/IdleRight.png',
+                imageSrc: './fighters/Medieval Warrior Pack 3/Sprites/IdleLeft.png',
                 framesMax: 10,
-                scale: 2.5,
+                scale: 3,
                 offset: {
-                    x: 100,
-                    y: 57
+                    x: 0,
+                    y: 95
                 },
                 sprites: {
                     idleLeft: {
@@ -1270,7 +1270,7 @@ function returnPlayerTwo(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 100,
+                        x: 200,
                         y: 50
                     },
                     width: 140,
