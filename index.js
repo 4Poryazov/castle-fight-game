@@ -395,7 +395,7 @@ function startGame() {
     var firstHero = document.querySelector('#firstPlayerList li.selected');
     var secondHero = document.querySelector('#secondPlayerList li.selected');
     var arena = document.querySelector('#selectArena li.selected');
-    decreaseTimer();
+   
 
     if (firstHero !== null && secondHero !== null && arena !== null) {
 
@@ -423,9 +423,10 @@ function startGame() {
                 torch2.changeSprite(467, 183, './LevelsBackground/SmallTorchBlue.png', 6);
                 break;
         };
+
         playerOne = returnPlayerOne(firstHero.id);
         playerTwo = returnPlayerTwo(secondHero.id);
-
+        decreaseTimer();
 
     } else {
         if (firstHero === null) {
@@ -529,15 +530,14 @@ function animate() {
         rectangle1: playerOne,
         rectangle2: playerTwo
     }) &&
-        playerOne.isAttacking && playerOne.framesCurrent === 4
-    ) {
+        playerOne.isAttacking && playerOne.framesCurrent === 4) {
         if(playerTwo.lastKey === 'ArrowLeft'){
             playerTwo.takeHitLeft();
         }else if (playerTwo.lastKey === 'ArrowRight'){
             playerTwo.takeHitRight();
         }
         playerOne.isAttacking = false;
-        gsap.to('#healthBarPO', {
+        gsap.to('#healthBarPT', {
             width: playerTwo.health + '%'
         });
     };
@@ -547,15 +547,14 @@ function animate() {
         rectangle1: playerTwo,
         rectangle2: playerOne
     }) &&
-        playerTwo.isAttacking && playerTwo.framesCurrent === 2
-    ) {
+        playerTwo.isAttacking && playerTwo.framesCurrent === 2) {
         if(playerOne.lastKey === 'a'){
             playerOne.takeHitLeft();
         }else if (playerOne.lastKey === 'd'){
             playerOne.takeHitRight();
         }
         playerTwo.isAttacking = false;
-        gsap.to('#healthBarPT', {
+        gsap.to('#healthBarPO', {
             width: playerOne.health + '%'
         });
 
