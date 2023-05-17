@@ -163,7 +163,6 @@ var playerOne = new Fighter({
         height: 50
     }
 });
-
 var playerTwo = new Fighter({
     position: {
         x: 0,
@@ -486,6 +485,8 @@ function animate() {
         }
     };
 
+
+
     //player Two Movement
     if (keys.ArrowLeft.pressed && playerTwo.lastKey === 'ArrowLeft') {
         if (playerTwo.position.x > -160) {
@@ -520,14 +521,18 @@ function animate() {
         }
     };
 
-     //detect for collision and PlayerTwo take Hit
-     if (rectangularCollision({
+    //detect for collision and PlayerTwo take Hit
+    if (rectangularCollision({
         rectangle1: playerOne,
         rectangle2: playerTwo
     }) &&
-    playerOne.isAttacking && playerOne.framesCurrent === 4
+        playerOne.isAttacking && playerOne.framesCurrent === 4
     ) {
-        playerTwo.takeHit();
+        if(playerTwo.lastKey === 'ArrowLeft'){
+            playerTwo.takeHitLeft();
+        }else if (playerTwo.lastKey === 'ArrowRight'){
+            playerTwo.takeHitRight();
+        }
         playerOne.isAttacking = false;
         /*gsap.to('#enemyHealth', {
             width: enemy.health + '%'
@@ -539,9 +544,13 @@ function animate() {
         rectangle1: playerTwo,
         rectangle2: playerOne
     }) &&
-    playerTwo.isAttacking && playerTwo.framesCurrent === 2
+        playerTwo.isAttacking && playerTwo.framesCurrent === 2
     ) {
-        playerOne.takeHit();
+        if(playerOne.lastKey === 'a'){
+            playerOne.takeHitLeft();
+        }else if (playerOne.lastKey === 'd'){
+            playerOne.takeHitRight();
+        }
         playerTwo.isAttacking = false;
         /*gsap.to('#playerHealth', {
             width: player.health + '%'
@@ -550,14 +559,14 @@ function animate() {
     };
     //if playerOne misses
     if (playerOne.isAttacking && playerOne.framesCurrent === 4) {
-        player.isAttacking = false;
+        playerOne.isAttacking = false;
     }
     //if playerTwo misses
     if (playerTwo.isAttacking && playerTwo.framesCurrent === 2) {
         playerTwo.isAttacking = false;
     }
-      // end game based on Health 
-      if (playerTwo.health <= 0 || playerOne.health <= 0) {
+    // end game based on Health 
+    if (playerTwo.health <= 0 || playerOne.health <= 0) {
         determineWinner({ playerOne, playerTwo, timerId });
         isGameOver = true;
     }
@@ -1364,7 +1373,7 @@ function hoverOutSmallBtn(event) {
 function backToMain() {
     location.reload();
 }
-if(!isGameOver){
+if (!isGameOver) {
     animate();
 }
 window.addEventListener('keydown', (event) => {
@@ -1447,7 +1456,8 @@ window.addEventListener('keydown', (event) => {
                 }                break;
         }
     }
-;})
+    ;
+})
 window.addEventListener('keyup', (event) => {
     switch (event.key) {
         //player One Keys
