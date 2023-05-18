@@ -450,7 +450,7 @@ function animate() {
     torch.update();
     torch2.update();
     //to make players pop-up
-    context.fillStyle = 'rgba(255, 255, 255, 0.05)'
+    context.fillStyle = 'rgba(255, 255, 255, 0.1)'
     context.fillRect(0, 0, canvas.width, canvas.height);
     playerOne.update();
     playerTwo.update();
