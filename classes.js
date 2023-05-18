@@ -75,7 +75,7 @@ class Fighter extends Sprite {
             offset
         })
         this.velocity = velocity;
-        this.width = 50;
+        this.width = 40;
         this.height = 150;
         this.lastKey;
         this.attackBox = {
@@ -115,7 +115,7 @@ class Fighter extends Sprite {
         this.position.y += this.velocity.y;
 
         // draw Attack Boxes
-        // context.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height);
+        context.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height);
 
         // gravity function
         if (this.position.y + this.height + this.velocity.y >= canvas.height - 96) {

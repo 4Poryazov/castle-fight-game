@@ -10,8 +10,6 @@ function determineWinner({ playerOne, playerTwo, timerId }) {
     clearTimeout(timerId);
     if (!isGameOver) {
         document.querySelector('#displayText').style.visibility = 'visible';
-        console.log("PlayerOne ->" + playerOne.health);
-        console.log("PlayerTwo ->" + playerTwo.health);
         if (playerOne.health === playerTwo.health) {
             document.querySelector('#displayText').textContent = 'Tie';
         } else if (playerOne.health > playerTwo.health) {

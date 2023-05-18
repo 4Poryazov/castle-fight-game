@@ -43,6 +43,7 @@ context.fillRect(0, 0, canvas.width, canvas.height);
 const gravity = 0.7;
 
 let isGameOver = false;
+let isGameStart = false;
 
 var background = new Sprite(
     {
@@ -426,6 +427,7 @@ function startGame() {
 
         playerOne = returnPlayerOne(firstHero.id);
         playerTwo = returnPlayerTwo(secondHero.id);
+        isGameStart = true;
         decreaseTimer();
 
     } else {
@@ -458,12 +460,12 @@ function animate() {
 
     //player One Movement
     if (keys.a.pressed && playerOne.lastKey === 'a') {
-        if (playerOne.position.x > -160) {
+        if (playerOne.position.x > 20) {
             playerOne.velocity.x = -5;
             playerOne.switchSprite('runLeft');
         }
     } else if (keys.d.pressed && playerOne.lastKey === 'd') {
-        if (playerOne.position.x < 750) {
+        if (playerOne.position.x < 960) {
             playerOne.velocity.x = 5;
             playerOne.switchSprite('runRight');
         }
@@ -489,16 +491,14 @@ function animate() {
         }
     };
 
-
-
     //player Two Movement
     if (keys.ArrowLeft.pressed && playerTwo.lastKey === 'ArrowLeft') {
-        if (playerTwo.position.x > -160) {
+        if (playerTwo.position.x > 20) {
             playerTwo.velocity.x = -5;
             playerTwo.switchSprite('runLeft');
         }
     } else if (keys.ArrowRight.pressed && playerTwo.lastKey === 'ArrowRight') {
-        if (playerTwo.position.x < 750) {
+        if (playerTwo.position.x < 960) {
             playerTwo.velocity.x = 5;
             playerTwo.switchSprite('runRight');
         }
@@ -581,7 +581,7 @@ function returnPlayerOne(heroId) {
         case "fantasyWarrior":
             hero = new Fighter({
                 position: {
-                    x: -180,
+                    x: 40,
                     y: 0
                 },
                 velocity: {
@@ -592,7 +592,7 @@ function returnPlayerOne(heroId) {
                 framesMax: 10,
                 scale: 3,
                 offset: {
-                    x: 0,
+                    x: 220,
                     y: 140
                 },
                 sprites: {
@@ -663,7 +663,7 @@ function returnPlayerOne(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 260,
+                        x: 50,
                         y: 50
                     },
                     width: 110,
@@ -674,7 +674,7 @@ function returnPlayerOne(heroId) {
         case "redKnight":
             hero = new Fighter({
                 position: {
-                    x: -150,
+                    x: 40,
                     y: 0
                 },
                 velocity: {
@@ -685,7 +685,7 @@ function returnPlayerOne(heroId) {
                 framesMax: 11,
                 scale: 3,
                 offset: {
-                    x: 0,
+                    x: 200,
                     y: 87
                 },
                 sprites: {
@@ -756,7 +756,7 @@ function returnPlayerOne(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 260,
+                        x: 50,
                         y: 50
                     },
                     width: 110,
@@ -767,7 +767,7 @@ function returnPlayerOne(heroId) {
         case "igor":
             hero = new Fighter({
                 position: {
-                    x: -150,
+                    x: 60,
                     y: 0
                 },
                 velocity: {
@@ -778,7 +778,7 @@ function returnPlayerOne(heroId) {
                 framesMax: 8,
                 scale: 3,
                 offset: {
-                    x: 0,
+                    x: 200,
                     y: 125
                 },
                 sprites: {
@@ -849,7 +849,7 @@ function returnPlayerOne(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 260,
+                        x: 50,
                         y: 50
                     },
                     width: 110,
@@ -860,7 +860,7 @@ function returnPlayerOne(heroId) {
         case "jack":
             hero = new Fighter({
                 position: {
-                    x: -150,
+                    x: 40,
                     y: 0
                 },
                 velocity: {
@@ -871,7 +871,7 @@ function returnPlayerOne(heroId) {
                 framesMax: 10,
                 scale: 3,
                 offset: {
-                    x: 0,
+                    x: 200,
                     y: 95
                 },
                 sprites: {
@@ -942,7 +942,7 @@ function returnPlayerOne(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 260,
+                        x: 50,
                         y: 50
                     },
                     width: 110,
@@ -959,7 +959,7 @@ function returnPlayerTwo(heroId) {
         case "fantasyWarrior":
             hero = new Fighter({
                 position: {
-                    x: 710,
+                    x: 910,
                     y: 0
                 },
                 velocity: {
@@ -970,7 +970,7 @@ function returnPlayerTwo(heroId) {
                 framesMax: 10,
                 scale: 3,
                 offset: {
-                    x: 0,
+                    x: 220,
                     y: 140
                 },
                 sprites: {
@@ -1041,7 +1041,7 @@ function returnPlayerTwo(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 260,
+                        x: -120,
                         y: 50
                     },
                     width: 110,
@@ -1052,7 +1052,7 @@ function returnPlayerTwo(heroId) {
         case "redKnight":
             hero = new Fighter({
                 position: {
-                    x: 730,
+                    x: 910,
                     y: 0
                 },
                 velocity: {
@@ -1063,7 +1063,7 @@ function returnPlayerTwo(heroId) {
                 framesMax: 11,
                 scale: 3,
                 offset: {
-                    x: 0,
+                    x: 190,
                     y: 87
                 },
                 sprites: {
@@ -1134,7 +1134,7 @@ function returnPlayerTwo(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 260,
+                        x: -120,
                         y: 50
                     },
                     width: 110,
@@ -1145,7 +1145,7 @@ function returnPlayerTwo(heroId) {
         case "igor":
             hero = new Fighter({
                 position: {
-                    x: 730,
+                    x: 910,
                     y: 0
                 },
                 velocity: {
@@ -1156,7 +1156,7 @@ function returnPlayerTwo(heroId) {
                 framesMax: 8,
                 scale: 3,
                 offset: {
-                    x: 0,
+                    x: 200,
                     y: 125
                 },
                 sprites: {
@@ -1227,7 +1227,7 @@ function returnPlayerTwo(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 260,
+                        x: -120,
                         y: 50
                     },
                     width: 110,
@@ -1238,7 +1238,7 @@ function returnPlayerTwo(heroId) {
         case "jack":
             hero = new Fighter({
                 position: {
-                    x: 740,
+                    x: 910,
                     y: 0
                 },
                 velocity: {
@@ -1249,7 +1249,7 @@ function returnPlayerTwo(heroId) {
                 framesMax: 10,
                 scale: 3,
                 offset: {
-                    x: 0,
+                    x: 180,
                     y: 95
                 },
                 sprites: {
@@ -1320,7 +1320,7 @@ function returnPlayerTwo(heroId) {
                 },
                 attackBox: {
                     offset: {
-                        x: 260,
+                        x: -120,
                         y: 50
                     },
                     width: 110,
@@ -1380,17 +1380,17 @@ if (!isGameOver) {
 }
 window.addEventListener('keydown', (event) => {
     //firstPlayerKeys
-    if (!playerOne.dead && !isGameOver) {
+    if (!playerOne.dead && !isGameOver && isGameStart) {
         switch (event.key) {
             case 'd':
                 keys.d.pressed = true;
                 playerOne.lastKey = 'd';
-                playerOne.attackBox.offset.x = 260;
+                playerOne.attackBox.offset.x = 50;
                 break;
             case 'a':
                 keys.a.pressed = true;
                 playerOne.lastKey = 'a';
-                playerOne.attackBox.offset.x = 80;
+                playerOne.attackBox.offset.x = -120;
                 break;
             case 'w':
                 if (playerOne.position.y === 330) {
@@ -1420,17 +1420,17 @@ window.addEventListener('keydown', (event) => {
         }
     }
     // secondPlayerKeys
-    if (!playerTwo.dead && !isGameOver) {
+    if (!playerTwo.dead && !isGameOver && isGameStart) {
         switch (event.key) {
             case 'ArrowRight':
                 keys.ArrowRight.pressed = true;
                 playerTwo.lastKey = 'ArrowRight';
-                playerTwo.attackBox.offset.x = 260;
+                playerTwo.attackBox.offset.x = 50;
                 break;
             case 'ArrowLeft':
                 keys.ArrowLeft.pressed = true;
                 playerTwo.lastKey = 'ArrowLeft';
-                playerTwo.attackBox.offset.x = 80;
+                playerTwo.attackBox.offset.x = -120;
                 break;
             case 'ArrowUp':
                 if (playerTwo.position.y === 330) {
