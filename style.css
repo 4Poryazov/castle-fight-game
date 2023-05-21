@@ -1,12 +1,17 @@
 * {
     box-sizing: border-box;
 }
+@font-face {
+    font-family: Ancient Modern Tales;
+    src: url(./fonts/AncientModernTales.otf);
+}
 body{
     background-color: #acacac;
 }
 
 h1 {
     font-family: 'Ancient Modern Tales';
+    
     font-size: 90px;
     font-style: normal;
     position: absolute;
