@@ -294,60 +294,17 @@ function hoverNewGameBtn(event) {
     event.srcElement.style.color = 'white';
 }
 function hoverCreditsBtn(event) {
-    background = new Sprite(
-        {
-            position: {
-                x: 0,
-                y: 0
-            },
-            imageSrc: './LevelsBackground/StartMenuRightBlue.png',
-        }
-    );
-    torch2 = new Sprite(
-        {
-            position: {
-                x: 641,
-                y: 225
-            },
-            imageSrc: './LevelsBackground/BigTorchBlue.png',
-            framesMax: 6,
-            scale: 0.32
-        }
-    );
+    background.changeSprite(0, 0, './LevelsBackground/StartMenuRightBlue.png', 1);
+    torch2.changeSprite(641, 225, './LevelsBackground/BigTorchBlue.png', 6, 0.32);
+
     event.srcElement.style.boxShadow = '-3px -3px 5px 5px rgba(48, 130, 224, 0.7), 3px 3px 5px 5px rgba(74, 48, 224, 0.7)';
     event.srcElement.style.backgroundImage = " url('./LevelsBackground/Button2.png')";
     event.srcElement.style.color = 'white';
 }
 function hoverOut(event) {
-    background = new Sprite(
-        {
-            position: {
-                x: 0,
-                y: 0
-            },
-            imageSrc: './LevelsBackground/StartMenu.png',
-        }
-    );
-    torch = new Sprite(
-        {
-            position: {
-                x: 425,
-                y: 225
-            },
-            imageSrc: './LevelsBackground/BigTorch.png',
-            framesMax: 6
-        }
-    );
-    torch2 = new Sprite(
-        {
-            position: {
-                x: 641,
-                y: 225
-            },
-            imageSrc: './LevelsBackground/BigTorch.png',
-            framesMax: 6
-        }
-    );
+    background.changeSprite(0, 0, './LevelsBackground/StartMenu.png', 1);
+    torch.changeSprite(425, 225, './LevelsBackground/BigTorch.png', 6);
+    torch2.changeSprite(641, 225, './LevelsBackground/BigTorch.png', 6);
 
     event.srcElement.style.boxShadow = '-2px -2px 2px 4px rgba(0, 0, 0, 0.3), 2px 2px 2px 4px rgba(0, 0, 0, 0.3)'
     event.srcElement.style.backgroundImage = " url('./LevelsBackground/Button1.png')";
